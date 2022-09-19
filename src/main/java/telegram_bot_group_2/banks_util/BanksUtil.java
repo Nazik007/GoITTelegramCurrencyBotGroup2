@@ -15,7 +15,7 @@ public class BanksUtil {
     private static final Gson GSON = new Gson();
 
     private static final String NBU_URL = "https://bank.gov.ua/NBUStatService/v1/statdirectory/exchangenew?json";
-//    private static final String MONOBANK_URL = "";
+    private static final String MONOBANK_URL = "https://api.monobank.ua/bank/currency";
 //    private static final String PRIVAT_URL = "";
 
     static Type typeNbu = new TypeToken<List<NBU>> (){}.getType();
