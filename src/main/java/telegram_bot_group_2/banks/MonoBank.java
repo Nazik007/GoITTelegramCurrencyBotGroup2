@@ -8,6 +8,7 @@ public class MonoBank {
     private int date;
     private float rateBuy;
     private float rateSell;
+
     private float rateCross;
     public int getCurrencyCodeA() { return currencyCodeA; }
 
