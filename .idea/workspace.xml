@@ -5,10 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="748799f8-4f41-40f8-af2f-29de8deac60b" name="Changes" comment="Started the work">
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/telegram_bot_group_2/banks/MonoBank.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/telegram_bot_group_2/banks/MonoBank.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/telegram_bot_group_2/banks_util/BanksUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/telegram_bot_group_2/banks_util/BanksUtil.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,7 +52,7 @@
       <option name="presentableId" value="Default" />
       <updated>1663575155844</updated>
       <workItem from="1663575157224" duration="6662000" />
-      <workItem from="1663613809888" duration="668000" />
+      <workItem from="1663613809888" duration="1443000" />
     </task>
     <task id="LOCAL-00001" summary="Started the work">
       <created>1663602590580</created>
@@ -64,7 +61,14 @@
       <option name="project" value="LOCAL" />
       <updated>1663602590580</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Started the work">
+      <created>1663614522562</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1663614522562</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
