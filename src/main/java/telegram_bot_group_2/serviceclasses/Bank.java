@@ -1,6 +1,6 @@
 package telegram_bot_group_2.serviceclasses;
 
-import telegram_bot_group_2.banks_util.Currency;
+import telegram_bot_group_2.settings.Currency;
 
 import java.time.LocalDateTime;
 import java.util.Objects;
@@ -102,6 +102,27 @@ public class Bank {
                 '}';
     }
 
+    public Float getBuyRate (Currency currency) {
+        switch (currency){
+            case USD:
+                return this.USD_buy;
+            case EUR:
+                return this.EUR_buy;
+            case GBP:
+                return this.GBP_buy;
+        }
+        return null;
+    }
 
-
+    public Float getSellRate (Currency currency) {
+        switch (currency) {
+            case USD:
+                return this.USD_sell;
+            case EUR:
+                return this.EUR_sell;
+            case GBP:
+                return this.GBP_sell;
+        }
+        return null;
+    }
 }
