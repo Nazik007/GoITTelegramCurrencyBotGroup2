@@ -4,7 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="748799f8-4f41-40f8-af2f-29de8deac60b" name="Changes" comment="" />
+    <list default="true" id="748799f8-4f41-40f8-af2f-29de8deac60b" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/telegram_bot_group_2/banks/MonoBank.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/telegram_bot_group_2/banks/NBU.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/telegram_bot_group_2/banks/Privat.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/telegram_bot_group_2/banks_util/BanksUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/telegram_bot_group_2/banks_util/Currency.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/telegram_bot_group_2/serviceclasses/Bank.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -15,8 +27,19 @@
       <ProjectState />
     </projectState>
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+        <option value="Enum" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2EykLYebaF69U4hx2vM6fgh83tc" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -26,6 +49,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false"
   }
 }]]></component>
@@ -37,8 +61,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1663575155844</updated>
+      <workItem from="1663575157224" duration="4973000" />
     </task>
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
