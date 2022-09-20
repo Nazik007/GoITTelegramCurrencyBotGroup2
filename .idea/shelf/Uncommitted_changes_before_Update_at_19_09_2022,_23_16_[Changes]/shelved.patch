@@ -1,0 +1,67 @@
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	
++++ b/.idea/workspace.xml	
+@@ -4,10 +4,8 @@
+     <option name="autoReloadType" value="SELECTIVE" />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="748799f8-4f41-40f8-af2f-29de8deac60b" name="Changes" comment="Started the work">
++    <list default="true" id="748799f8-4f41-40f8-af2f-29de8deac60b" name="Changes" comment="Understood the logic behind some methods and written them">
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/telegram_bot_group_2/banks_util/Currency.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/telegram_bot_group_2/settings/Currency.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/telegram_bot_group_2/serviceclasses/Bank.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/telegram_bot_group_2/serviceclasses/Bank.java" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -42,7 +40,10 @@
+   <component name="PropertiesComponent"><![CDATA[{
+   "keyToString": {
+     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+-    "WebServerToolWindowFactoryState": "false"
++    "WebServerToolWindowFactoryState": "false",
++    "project.structure.last.edited": "Modules",
++    "project.structure.proportion": "0.15",
++    "project.structure.side.proportion": "0.2"
+   }
+ }]]></component>
+   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+@@ -53,7 +54,7 @@
+       <option name="number" value="Default" />
+       <option name="presentableId" value="Default" />
+       <updated>1663575155844</updated>
+-      <workItem from="1663575157224" duration="6662000" />
++      <workItem from="1663575157224" duration="7894000" />
+     </task>
+     <task id="LOCAL-00001" summary="Started the work">
+       <created>1663602590580</created>
+@@ -62,7 +63,14 @@
+       <option name="project" value="LOCAL" />
+       <updated>1663602590580</updated>
+     </task>
+-    <option name="localTasksCounter" value="2" />
++    <task id="LOCAL-00002" summary="Understood the logic behind some methods and written them">
++      <created>1663607060549</created>
++      <option name="number" value="00002" />
++      <option name="presentableId" value="LOCAL-00002" />
++      <option name="project" value="LOCAL" />
++      <updated>1663607060549</updated>
++    </task>
++    <option name="localTasksCounter" value="3" />
+     <servers />
+   </component>
+   <component name="TypeScriptGeneratedFilesManager">
+@@ -81,6 +89,7 @@
+   </component>
+   <component name="VcsManagerConfiguration">
+     <MESSAGE value="Started the work" />
+-    <option name="LAST_COMMIT_MESSAGE" value="Started the work" />
++    <MESSAGE value="Understood the logic behind some methods and written them" />
++    <option name="LAST_COMMIT_MESSAGE" value="Understood the logic behind some methods and written them" />
+   </component>
+ </project>
+\ No newline at end of file
