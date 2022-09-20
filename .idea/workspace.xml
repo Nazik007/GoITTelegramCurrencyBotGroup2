@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="748799f8-4f41-40f8-af2f-29de8deac60b" name="Changes" comment="Started the work">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="748799f8-4f41-40f8-af2f-29de8deac60b" name="Changes" comment="Test">
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_20_09_2022_9_00__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/telegram_bot_group_2/banks_util/BanksUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/telegram_bot_group_2/banks_util/BanksUtil.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,6 +28,7 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -87,6 +89,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Started the work" />
-    <option name="LAST_COMMIT_MESSAGE" value="Started the work" />
+    <MESSAGE value="Test" />
+    <option name="LAST_COMMIT_MESSAGE" value="Test" />
   </component>
 </project>
