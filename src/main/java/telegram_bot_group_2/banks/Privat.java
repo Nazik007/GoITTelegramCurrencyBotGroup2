@@ -3,7 +3,7 @@ package telegram_bot_group_2.banks;
 import java.util.Objects;
 
 public class Privat {
-    private String ccy; //23232
+    private String ccy;
     private String base_ccy;
     private float buy;
     private float sale;
