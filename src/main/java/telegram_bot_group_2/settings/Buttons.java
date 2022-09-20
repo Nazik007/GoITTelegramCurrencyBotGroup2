@@ -1,6 +1,7 @@
 package telegram_bot_group_2.settings;
 
 public enum Buttons {
+
     START("Старт", "/start"),
     GET_INFO("Отримати інформацію", "Get info"),
     BANK("Банк \uD83C\uDFDB", "Bank"),
@@ -11,8 +12,6 @@ public enum Buttons {
     ZONEID("Часовий пояс", "Time zone"),
     BACK_TO_SETTINGS("↩️", "Settings"),
     BACK_TO_START("🏠️", "BACK_TO_START");
-
-
 
     private String buttonsNameUA;
     private String buttonsNameEN;
