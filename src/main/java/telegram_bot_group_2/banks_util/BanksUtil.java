@@ -20,6 +20,7 @@ public class BanksUtil {
     private static final String PRIVAT_URL = "https://api.privatbank.ua/p24api/pubinfo?json&exchange&coursid=11";
 
     static Type typeNbu = new TypeToken<List<NBU>> (){}.getType();
+    static Type typeMono = new TypeToken<List<Privat>>() { }.getType();
     static Type typePrivat = new TypeToken<List<Privat>>() { }.getType();
 
 
