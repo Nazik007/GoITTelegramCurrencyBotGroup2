@@ -16,6 +16,7 @@ public class Bank {
 
     private LocalDateTime time;
 
+
     public Bank() {
     }
 
@@ -77,17 +78,25 @@ public class Bank {
         this.GBP_sell = GBP_sell;
     }
 
+    public LocalDateTime getTime() {
+        return time;
+    }
+
+    public void setTime(LocalDateTime time) {
+        this.time = time;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Bank bank = (Bank) o;
-        return Objects.equals(USD_buy, bank.USD_buy) && Objects.equals(USD_sell, bank.USD_sell) && Objects.equals(EUR_buy, bank.EUR_buy) && Objects.equals(EUR_sell, bank.EUR_sell) && Objects.equals(GBP_buy, bank.GBP_buy) && Objects.equals(GBP_sell, bank.GBP_sell);
+        return Objects.equals(USD_buy, bank.USD_buy) && Objects.equals(USD_sell, bank.USD_sell) && Objects.equals(EUR_buy, bank.EUR_buy) && Objects.equals(EUR_sell, bank.EUR_sell) && Objects.equals(GBP_buy, bank.GBP_buy) && Objects.equals(GBP_sell, bank.GBP_sell) && Objects.equals(time, bank.time);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(USD_buy, USD_sell, EUR_buy, EUR_sell, GBP_buy, GBP_sell);
+        return Objects.hash(USD_buy, USD_sell, EUR_buy, EUR_sell, GBP_buy, GBP_sell, time);
     }
 
     @Override
@@ -99,6 +108,7 @@ public class Bank {
                 ", EUR_sell=" + EUR_sell +
                 ", GBP_buy=" + GBP_buy +
                 ", GBP_sell=" + GBP_sell +
+                ", time=" + time +
                 '}';
     }
 
