@@ -1,4 +1,4 @@
-package telegram_bot_group_2.keyboards;
+package telegram_bot_group_2.bot_services.keyboards;
 
 import org.telegram.telegrambots.meta.api.objects.replykeyboard.InlineKeyboardMarkup;
 import org.telegram.telegrambots.meta.api.objects.replykeyboard.buttons.InlineKeyboardButton;
@@ -86,8 +86,8 @@ public abstract class Menu {
                 .build();
         keyboardMenuCurrency1.add(buttonUsd);
         keyboardMenuCurrency2.add(buttonEur);
-        keyboardMenuCurrency5.add(buttonHome);
-        keyboardMenuCurrency5.add(buttonBack);
+        keyboardMenuCurrency3.add(buttonHome);
+        keyboardMenuCurrency3.add(buttonBack);
         keyboardMenuCurrency.add(keyboardMenuCurrency1);
         keyboardMenuCurrency.add(keyboardMenuCurrency2);
         keyboardMenuCurrency.add(keyboardMenuCurrency3);
@@ -392,9 +392,6 @@ public abstract class Menu {
         List<List<InlineKeyboardButton>> keyboardMenuLang = new ArrayList<>();
         List<InlineKeyboardButton> keyboardMSetRow1 = new ArrayList<>();
         List<InlineKeyboardButton> keyboardMSetRow2 = new ArrayList<>();
-        List<InlineKeyboardButton> keyboardMSetRow3 = new ArrayList<>();
-        List<InlineKeyboardButton> keyboardMSetRow4 = new ArrayList<>();
-        List<InlineKeyboardButton> keyboardMSetRow5 = new ArrayList<>();
         InlineKeyboardButton buttonUA = InlineKeyboardButton.builder()
                 .text(Language.UA.getLangFlag())
                 .callbackData(Language.UA.getLangName())
@@ -414,9 +411,6 @@ public abstract class Menu {
         List<InlineKeyboardButton> keyboardMSetRow1 = new ArrayList<>();
         List<InlineKeyboardButton> keyboardMSetRow2 = new ArrayList<>();
         List<InlineKeyboardButton> keyboardMSetRow3 = new ArrayList<>();
-        List<InlineKeyboardButton> keyboardMSetRow4 = new ArrayList<>();
-        List<InlineKeyboardButton> keyboardMSetRow5 = new ArrayList<>();
-        List<InlineKeyboardButton> keyboardMSetRow6 = new ArrayList<>();
         InlineKeyboardButton buttonUA = InlineKeyboardButton.builder()
                 .text(Language.UA.getLangFlag())
                 .callbackData(Language.UA.getLangName())
@@ -435,8 +429,8 @@ public abstract class Menu {
                 .build();
         keyboardMSetRow1.add(buttonUA);
         keyboardMSetRow2.add(buttonEN);
-        keyboardMSetRow6.add(buttonHome);
-        keyboardMSetRow6.add(buttonBackToSetting);
+        keyboardMSetRow3.add(buttonHome);
+        keyboardMSetRow3.add(buttonBackToSetting);
         keyboardMenuLang.add(keyboardMSetRow1);
         keyboardMenuLang.add(keyboardMSetRow2);
         return InlineKeyboardMarkup.builder().keyboard(keyboardMenuLang).build();
