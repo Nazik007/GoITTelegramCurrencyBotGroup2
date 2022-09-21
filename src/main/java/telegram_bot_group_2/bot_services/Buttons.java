@@ -1,4 +1,4 @@
-package telegram_bot_group_2.settings;
+package telegram_bot_group_2.bot_services;
 
 public enum Buttons {
 

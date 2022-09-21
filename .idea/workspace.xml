@@ -4,8 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="748799f8-4f41-40f8-af2f-29de8deac60b" name="Changes" comment="text">
-      <change beforePath="$PROJECT_DIR$/src/main/java/telegram_bot_group_2/settings/Buttons.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/telegram_bot_group_2/settings/Buttons.java" afterDir="false" />
+    <list default="true" id="748799f8-4f41-40f8-af2f-29de8deac60b" name="Changes" comment="Test">
+      <change afterPath="$PROJECT_DIR$/src/main/java/telegram_bot_group_2/settings/CurrencyDataBase.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/telegram_bot_group_2/settings/Settings.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/telegram_bot_group_2/settings/SettingsProcceses.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/telegram_bot_group_2/settings/Buttons.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/telegram_bot_group_2/bot_services/Buttons.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,8 +24,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Enum" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -37,12 +41,13 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "/Users/orest/IdeaProjects/GoITTelegramCurrencyBotGroup2"
   }
-}</component>
+}]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -75,21 +80,7 @@
       <option name="project" value="LOCAL" />
       <updated>1663698162447</updated>
     </task>
-    <task id="LOCAL-00004" summary="Test">
-      <created>1663698278411</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1663698278411</updated>
-    </task>
-    <task id="LOCAL-00005" summary="text">
-      <created>1663703759767</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1663703759767</updated>
-    </task>
-    <option name="localTasksCounter" value="6" />
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -109,7 +100,6 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Started the work" />
     <MESSAGE value="Test" />
-    <MESSAGE value="text" />
-    <option name="LAST_COMMIT_MESSAGE" value="text" />
+    <option name="LAST_COMMIT_MESSAGE" value="Test" />
   </component>
 </project>
