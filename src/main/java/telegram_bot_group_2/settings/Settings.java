@@ -32,13 +32,10 @@ public class Settings {
         Setting userSetting = settingsAllUsers.get(chatId);
         Language language = userSetting.getSelectedLanguage();
         String bankName;
-        switch (language) {
-            case UA:
-                bankName = userSetting.getSelectedBank().getBankNameUA();
-                break;
-            default:
-                bankName = userSetting.getSelectedBank().getBankNameEN();
-                break;
+        if (language == Language.UA) {
+            bankName = userSetting.getSelectedBank().getBankNameUA();
+        } else {
+            bankName = userSetting.getSelectedBank().getBankNameEN();
         }
         messageToUser.append(bankName).append("\n");
         int numberDecPlaces = userSetting.getNumberOfDecimalPlaces();
