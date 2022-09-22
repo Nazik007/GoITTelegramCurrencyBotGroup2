@@ -11,7 +11,8 @@ public enum Buttons {
     LANGUAGE("Мова", "Language"),
     ZONEID("Часовий пояс", "Time zone"),
     BACK_TO_SETTINGS("↩️", "Settings"),
-    BACK_TO_START("🏠️", "BACK_TO_START");
+    BACK_TO_START("🏠️", "BACK_TO_START"),
+    NUM_DECIMAL_PLACES("Кількість знаків після коми","Number of decimal places" );
 
     private String buttonsNameUA;
     private String buttonsNameEN;
