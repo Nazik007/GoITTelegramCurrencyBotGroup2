@@ -1,83 +1,195 @@
 package telegram_bot_group_2.settings;
 
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.google.gson.Gson;
+import telegram_bot_group_2.serviceclasses.Bank;
+import telegram_bot_group_2.serviceclasses.CurrencyDataBase;
+
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+
+import static java.lang.String.format;
 
 public class Settings {
-//    private Long chatId;
-//    private NumberOfDecimalPlaces numberOfDecimalPlaces;
-//    private Banks selectedBank;
-//    private List<Currency> selectedCurrency;
-//    private NotificationTime notificationTime;
-//    private ZoneId zoneId;
-//    private Language language;
-//
-//    public Settings() {
-//    }
-//
-////    public Settings(Long chatId, NumberOfDecimalPlaces numberOfDecimalPlaces, Banks selectedBank,
-////                   List<Currency> selectedCurrency, NotificationTime notificationTime, ZoneId zoneId, Language language) {
-////        this.chatId = chatId;
-////        this.numberOfDecimalPlaces = numberOfDecimalPlaces;
-////        this.selectedBank = selectedBank;
-////        this.selectedCurrency = selectedCurrency;
-////        this.notificationTime = notificationTime;
-////        this.zoneId = zoneId;
-////        this.language = language;
-////    }
-////
-////    public void setChatId(Long chatId) {
-////        this.chatId = chatId;
-////    }
-////
-////    public Long getChatId() {
-////        return chatId;
-////    }
-////
-////    public int getNumberOfDecimalPlaces() {
-////        return numberOfDecimalPlaces.getIntNumber();
-////    }
-////
-////    public void setNumberOfDecimalPlaces(NumberOfDecimalPlaces numberOfDecimalPlaces) {
-////        this.numberOfDecimalPlaces = numberOfDecimalPlaces;
-////    }
-////
-////    public Banks getSelectedBank() {
-////        return selectedBank;
-////    }
-////
-////    public void setSelectedBank(Banks selectedBank) {
-////        this.selectedBank = selectedBank;
-////    }
-////
-////    public List<Currency> getSelectedCurrency() {
-////        return selectedCurrency;
-////    }
-////
-////    public void setSelectedCurrency(List<Currency> selectedCurrency) {
-////        this.selectedCurrency = selectedCurrency;
-////    }
-////
-////    public NotificationTime getNotificationTime() {
-////        return notificationTime;
-////    }
-////
-////    public void setNotificationTime(NotificationTime notificationTime) {
-////        this.notificationTime = notificationTime;
-////    }
-////
-////    public ZoneId getZoneId() {
-////        return zoneId;
-////    }
-////
-////    public void setZoneId(ZoneId zoneId) {
-////        this.zoneId = zoneId;
-////    }
-////
-////    public void setSelectedLanguage(Language language) {
-////        this.language = language;
-////    }
-////
-////    public Language getSelectedLanguage() {
-////        return language;
-//    }
+    private CurrencyDataBase currencyDataBase;
+    public Map<Long, Setting> settingsAllUsers = new HashMap<>();
+    private  final Gson settingGson = new Gson();
+    private final Object monitor = new Object();
+
+    public Settings(CurrencyDataBase currencyDataBase) {
+        this.currencyDataBase = currencyDataBase;
+    }
+
+    public String getInfo(Long chatId) {
+        StringBuilder messageToUser = new StringBuilder();
+        Setting userSetting = settingsAllUsers.get(chatId);
+        Language language = userSetting.getSelectedLanguage();
+        String bankName;
+        switch (language) {
+            case UA:
+                bankName = userSetting.getSelectedBank().getBankNameUA();
+                break;
+            default:
+                bankName = userSetting.getSelectedBank().getBankNameEN();
+                break;
+        }
+        messageToUser.append(bankName).append("\n");
+        int numberDecPlaces = userSetting.getNumberOfDecimalPlaces();
+        List<Currency> currencies = userSetting.getSelectedCurrency();
+        Bank bankInfo = currencyDataBase.getCurrentInfo(userSetting.getSelectedBank());
+        for (Currency currency : currencies) {
+            messageToUser.append(Language.translate("Курс купівлі ", language))
+                    .append(currency.getCurrencyName())
+                    .append(" - ")
+                    .append(bankInfo.getBuyRate(currency) == 0 ? Language.translate("немає купівлі", language) :
+                            format("%." + numberDecPlaces + "f", bankInfo.getBuyRate(currency)) + addCurName(currency))
+                    .append("\n");
+            messageToUser.append(Language.translate("Курс продажу ", language))
+                    .append(currency.getCurrencyName())
+                    .append(" - ")
+                    .append(bankInfo.getSellRate(currency) == 0 ? Language.translate("немає продажу", language) :
+                            format("%." + numberDecPlaces + "f", bankInfo.getSellRate(currency)) + addCurName(currency))
+                    .append("\n");
+        }
+        return messageToUser.toString();
+    }
+
+    public File fileSettingsGsonCheck () {
+        String SETTING_GSON_PATH = "src/main/resources/settings.json";
+        File settingGsonFile = new File(SETTING_GSON_PATH);
+        if (!settingGsonFile.exists()) {
+            System.out.println("Generate Path for new GSON file Settings - " + settingGsonFile.getParentFile().mkdirs());
+            try {
+                System.out.println("Create new GSON file Settings - " + settingGsonFile.createNewFile());
+            } catch (IOException ex) {
+                ex.printStackTrace();
+            }
+            System.out.println(settingGsonFile.length());
+        }
+        return settingGsonFile;
+    }
+
+    public void load() {
+        IntermediateSettings intermediateSettings = new IntermediateSettings();
+        synchronized (monitor) {
+
+            File file = fileSettingsGsonCheck();
+            if (file.length() != 0) {
+                try {
+                    intermediateSettings.intermediateSettings = new ObjectMapper().readValue(file,
+                            new TypeReference<Map<Long, IntermediateSetting>>() {
+                            });
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
+                converter(intermediateSettings);
+            }
+        }
+    }
+
+
+    public void save() {
+        synchronized (monitor) {
+            try (BufferedWriter writer = new BufferedWriter(new FileWriter(fileSettingsGsonCheck()))) {
+                writer.write(settingGson.toJson(settingsAllUsers));
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    private void converter(IntermediateSettings intermediateSettings) {
+        synchronized (monitor) {
+            Map<Long, IntermediateSetting> inputMap = intermediateSettings.intermediateSettings;
+            Map<Long, Setting> outputMap = settingsAllUsers;
+            inputMap.forEach((k, v) -> {
+                Setting outputSetting = new Setting();
+
+                outputSetting.setChatId(v.getChatId());
+                outputSetting.setNumberOfDecimalPlaces(parseNumOfDecPlaces(v.getNumberOfDecimalPlaces()));
+                outputSetting.setSelectedBank(parseSelectedBank(v.getSelectedBank()));
+                outputSetting.setSelectedCurrency(parseCurrency(v.getSelectedCurrency()));
+                outputSetting.setNotificationTime(parseNotificationTime(v.getNotificationTime()));
+                outputSetting.setZoneId(parseZoneId(v.getZoneId()));
+                outputSetting.setSelectedLanguage(parseLanguage(v.getLanguage()));
+                outputMap.put(v.getChatId(), outputSetting);
+            });
+        }
+    }
+
+    private NumberOfDecimalPlaces parseNumOfDecPlaces(String inputStrNumOfDec) {
+        for (NumberOfDecimalPlaces value : NumberOfDecimalPlaces.values()) {
+            if (inputStrNumOfDec.equals(value.name())) {
+                return value;
+            }
+        }
+        return null;
+    }
+
+    private Banks parseSelectedBank(String inputStrBank) {
+        for (Banks value : Banks.values()) {
+            if (inputStrBank.equals(value.name())) {
+                return value;
+            }
+        }
+        return null;
+    }
+
+    private List<Currency> parseCurrency(List<String> inputListStrCurrency) {
+        List<Currency> result = new ArrayList<>();
+        for (Currency value : Currency.values()) {
+            for (String oneCurrency : inputListStrCurrency) {
+                if (oneCurrency.equals(value.name())) {
+                    result.add(value);
+                }
+            }
+
+        }
+        return result;
+    }
+
+    private NotificationTime parseNotificationTime(String inputStrNotificationTime) {
+        for (NotificationTime value : NotificationTime.values()) {
+            if (inputStrNotificationTime.equals(value.name())) {
+                return value;
+            }
+        }
+        return null;
+    }
+
+    private ZoneId parseZoneId(String inputStrZoneId) {
+        for (ZoneId value : ZoneId.values()) {
+            if (inputStrZoneId.equals(value.name())) {
+                return value;
+            }
+        }
+        return null;
+    }
+
+    private Language parseLanguage(String inputStrLang) {
+        for (Language value : Language.values()) {
+            if (inputStrLang.equals(value.name())) {
+                return value;
+            }
+        }
+        return null;
+    }
+
+    private String addCurName(Currency currency) {
+        switch (currency) {
+            case USD:
+            case GBP:
+            case EUR:
+                return " UAH";
+        }
+        return "";
+    }
+
 }

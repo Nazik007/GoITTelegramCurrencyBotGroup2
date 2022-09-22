@@ -1,6 +1,9 @@
 package telegram_bot_group_2.settings;
 
-public class Language {
+public enum Language {
+
+    EN("English", "EnglishSet", "English \uD83C\uDDFA\uD83C\uDDF8"),
+    UA("Ukrainian", "UkrainianSet", "Українська \uD83C\uDDFA\uD83C\uDDE6");
 
     String langName;
     String langNameSet;
@@ -24,8 +27,14 @@ public class Language {
         return langFlag;
     }
 
-    public static final Language EN = new Language("English", "EnglishSet", "English \uD83C\uDDFA\uD83C\uDDF8");
-    public static final Language UA = new Language("Ukrainian", "UkrainianSet", "Українська \uD83C\uDDFA\uD83C\uDDE6");
+    public static Language convertToEnumSet(String text) {
+        for (Language lang : Language.values()) {
+            if (lang.getLangNameSet().equals(text)) {
+                return lang;
+            }
+        }
+        return null;
+    }
 
     public static String translate(String text, Language language) {
         switch (text) {
