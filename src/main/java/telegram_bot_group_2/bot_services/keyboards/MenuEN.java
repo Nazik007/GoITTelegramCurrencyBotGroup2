@@ -3,7 +3,7 @@ package telegram_bot_group_2.bot_services.keyboards;
 import org.telegram.telegrambots.meta.api.objects.replykeyboard.InlineKeyboardMarkup;
 import org.telegram.telegrambots.meta.api.objects.replykeyboard.buttons.InlineKeyboardButton;
 import telegram_bot_group_2.bot_services.Buttons;
-import telegram_bot_group_2.settings.Currency;
+import telegram_bot_group_2.banks.currency.Currency;
 import telegram_bot_group_2.settings.Setting;
 import telegram_bot_group_2.settings.Settings;
 import java.util.ArrayList;

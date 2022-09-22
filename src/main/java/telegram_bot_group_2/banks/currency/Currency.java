@@ -1,4 +1,4 @@
-package telegram_bot_group_2.settings;
+package telegram_bot_group_2.banks.currency;
 
 import java.util.ArrayList;
 import java.util.List;

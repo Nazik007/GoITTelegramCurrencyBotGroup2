@@ -1,11 +1,10 @@
-package telegram_bot_group_2.banks_util;
+package telegram_bot_group_2.banks.banks_util;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import telegram_bot_group_2.banks.MonoBank;
 import telegram_bot_group_2.banks.NBU;
 import telegram_bot_group_2.banks.Privat;
-import telegram_bot_group_2.serviceclasses.Bank;
 
 
 import java.io.IOException;

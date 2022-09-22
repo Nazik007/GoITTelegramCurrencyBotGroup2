@@ -1,4 +1,4 @@
-package telegram_bot_group_2.settings;
+package telegram_bot_group_2.banks;
     public enum Banks {
         PRIVAT("ПриватБанк", "Privat", false),
         MONO("МоноБанк", "Monobank", false),

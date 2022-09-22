@@ -46,8 +46,8 @@ public class Timer implements Runnable{
             int userNotificationTime = settings.settingsAllUsers.get(key).getNotificationTime().getTime();
             int userZoneId = settings.settingsAllUsers.get(key).getZoneId().getZone();
             if (userNotificationTime == (int) hour.toHours()+userZoneId) {
-                CurrencyInfoBot timer = CurrencyInfoBot.getInstance("timer", settings);
-                timer.printMessage(chatId, settings.getInfo(chatId));
+                TelegramBot timer = TelegramBot.getInstance("timer", settings);
+                timer.printText(chatId, settings.getInfo(chatId));
             }
         }
     }

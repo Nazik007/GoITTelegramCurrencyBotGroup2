@@ -1,5 +1,8 @@
 package telegram_bot_group_2.settings;
 
+import telegram_bot_group_2.banks.Banks;
+import telegram_bot_group_2.banks.currency.Currency;
+
 import java.util.List;
 
 public class Setting {

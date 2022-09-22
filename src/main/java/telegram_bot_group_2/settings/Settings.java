@@ -3,8 +3,10 @@ package telegram_bot_group_2.settings;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.gson.Gson;
-import telegram_bot_group_2.serviceclasses.Bank;
-import telegram_bot_group_2.serviceclasses.CurrencyDataBase;
+import telegram_bot_group_2.banks.Banks;
+import telegram_bot_group_2.banks.currency.Currency;
+import telegram_bot_group_2.banks.banks_util.Bank;
+import telegram_bot_group_2.banks.currency.CurrencyDataBase;
 
 import java.io.BufferedWriter;
 import java.io.File;

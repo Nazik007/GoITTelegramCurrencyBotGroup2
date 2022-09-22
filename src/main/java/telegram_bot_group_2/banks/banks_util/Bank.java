@@ -1,6 +1,6 @@
-package telegram_bot_group_2.serviceclasses;
+package telegram_bot_group_2.banks.banks_util;
 
-import telegram_bot_group_2.settings.Currency;
+import telegram_bot_group_2.banks.currency.Currency;
 
 import java.time.LocalDateTime;
 import java.util.Objects;

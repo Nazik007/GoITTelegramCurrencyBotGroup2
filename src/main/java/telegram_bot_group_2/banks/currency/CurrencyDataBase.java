@@ -1,7 +1,8 @@
-package telegram_bot_group_2.serviceclasses;
+package telegram_bot_group_2.banks.currency;
 
-import telegram_bot_group_2.banks_util.BanksUtil;
-import telegram_bot_group_2.settings.Banks;
+import telegram_bot_group_2.banks.banks_util.BanksUtil;
+import telegram_bot_group_2.banks.banks_util.Bank;
+import telegram_bot_group_2.banks.Banks;
 
 import java.io.IOException;
 import java.time.Duration;
